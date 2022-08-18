@@ -1,0 +1,27 @@
+include:
+  - project: 'common/gitlab-ci-templates'
+    ref: master
+    file: 'npm.yml'
+
+variables:
+  GROUP: canteen
+  CONTAINER_PORT: 8001
+
+deploy->develop:
+  extends: .deploy
+  variables:
+    SERVER_USER: root
+    SERVER_HOST: 120.79.87.241
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == "develop"'
+      when: on_success
+    - when: never
+# deploy->master:
+#   extends: .deploy
+#   variables:
+#     SERVER_USER: root
+#     SERVER_HOST: 120.79.206.185
+#   rules:
+#     - if: '$CI_COMMIT_REF_NAME == "master"'
+#       when: on_success
+#     - when: never

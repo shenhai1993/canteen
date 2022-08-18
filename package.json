@@ -1,0 +1,36 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "cross-env REACT_APP_ENV=local max build",
+    "build:develop": "cross-env REACT_APP_ENV=develop max build",
+    "build:master": "cross-env REACT_APP_ENV=master max build",
+    "dev": "max dev",
+    "postinstall": "max setup",
+    "prepare": "husky install",
+    "setup": "max setup",
+    "start": "HOST=10.39.65.70 npm run dev"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "@ant-design/pro-components": "^1.1.3",
+    "@icon-park/react": "^1.3.5",
+    "@umijs/max": "4.0.7",
+    "ahooks": "^3.5.2",
+    "antd": "^4.20.7",
+    "lodash": "^4.17.21",
+    "react-quill": "^2.0.0-beta.4",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.182",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "cross-env": "^7.0.3",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2",
+    "prettier-plugin-organize-imports": "^2",
+    "prettier-plugin-packagejson": "^2",
+    "typescript": "^4.1.2"
+  }
+}
